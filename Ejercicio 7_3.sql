@@ -86,9 +86,22 @@ END;
 SET SERVEROUTPUT ON;
 
 DECLARE
-cod1 codPostal:= new codPostal(47,008);
+cod1 codPostal:= new codPostal(006,47);
+dom1 domicilio:=new domicilio('calle','del sol',40,'2ºD');
+n1 nombre:= new nombre('Hector','Gracia','Perez');
+dat1 datosObjeto:=new datosObjeto(111,n1,dom1,cod1,'07/03/2023');
 BEGIN
-DBMS_OUTPUT.PUT_LINE(cod1.localidad || ' ' || cod1.provincia);
+DBMS_OUTPUT.PUT_LINE('Codigo postal: '|| cod1.localidad || ' ' || cod1.provincia);
+DBMS_OUTPUT.PUT_LINE('Domicilio: '|| dom1.tipodeVia || ' ' || dom1.nombreVia ||' '|| dom1.numero ||' ' || dom1.restoDomicilio);
+DBMS_OUTPUT.PUT_LINE('Nombre: '|| n1.nombrePersona || ' ' || n1.prApellido ||' ' || n1.sgApellido);
+DBMS_OUTPUT.PUT_LINE('Datos objeto: '|| dat1.codigoPostal.localidad || ' ' || dat1.codigoPostal.provincia || ' ' || dat1.nombreCompleto.nombrePersona|| ' ' || dat1.nombreCompleto.prApellido || ' ' || dat1.nombreCompleto.sgApellido );
+
 cod1.iniCodPostal(48,008);
-DBMS_OUTPUT.PUT_LINE(cod1.localidad || ' ' || cod1.provincia);
+dom1.iniDomicilio('Via','Princesa',47,'.');
+n2.iniNombre('Guillermo','Martin','Bragado');
+dat1.iniDatos(111,n2,dom1,cod1,'07/03/2024');
+DBMS_OUTPUT.PUT_LINE('Codigo postal: '|| cod1.localidad || ' ' || cod1.provincia);
+DBMS_OUTPUT.PUT_LINE('Domicilio: '|| dom1.tipodeVia || ' ' || dom1.nombreVia ||' '|| dom1.numero ||' ' || dom1.restoDomicilio);
+DBMS_OUTPUT.PUT_LINE('Nombre: '|| n2.nombrePersona || ' ' || n2.prApellido ||' ' || n2.sgApellido);
+DBMS_OUTPUT.PUT_LINE('Datos objeto: '|| dat1.codigoPostal.localidad || ' ' || dat1.codigoPostal.provincia || ' ' || dat1.nombreCompleto.nombrePersona|| ' ' || dat1.nombreCompleto.prApellido || ' ' || dat1.nombreCompleto.sgApellido );
 END;

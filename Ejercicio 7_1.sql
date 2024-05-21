@@ -6,7 +6,7 @@ restoDomicilio.
 - Otro para el nombre completo: nombre, prApellido, sgApellido.
 - Otro para los DatosPersonales con los atributos: codigoDP, nombreCompleto, domicilio,
 codigoPostal y fechaNacimiento.*/
-CREATE OR REPLACE TYPE  codPostal AS OBJECT(
+CREATE OR REPLACE TYPE codPostal AS OBJECT(
     localidad NUMBER(3),
     provincia NUMBER(2)
 );
