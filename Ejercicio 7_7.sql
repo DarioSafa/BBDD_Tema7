@@ -8,7 +8,7 @@
 
 DECLARE
 --declaracion datos profesor
-    cod1 codPostal:= ;
+    cod1 codPostal:= new codPostal(003,28);
     dom1 domicilio:=new domicilio('Plaza','España',105,'1ºA');
     n1 nombre:= new nombre('Dolores','SANCHEZ','GOMEZ');
     p1 tPROFESOR:= new tPROFESOR(111,n1,dom1,cod1,'07/03/1995','1/9/2021');

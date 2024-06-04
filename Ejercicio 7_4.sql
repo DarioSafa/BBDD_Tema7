@@ -21,3 +21,10 @@ return edad;
 END muestraEdad;
 END;
 
+DECLARE
+    p1 PERSONA;
+BEGIN
+    p1 := NEW PERSONA(71463632,'Luis','Martin','Perez','15/03/2002');
+    DBMS_OUTPUT.PUT_LINE(p1.muestraEdad);
+END;
+
